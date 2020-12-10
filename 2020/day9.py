@@ -7,7 +7,7 @@ def p1():
         numbers = [int(n) for n in f.read().split('\n') if n != '']
 
     pos = 0
-    while any([(n[0] + n[1]) == numbers[pos+25] for n in itertools.combinations(numbers, 2)]):
+    while any([(n[0] + n[1]) == numbers[pos+25] for n in itertools.combinations(numbers[pos:pos+25], 2)]):
         pos += 1
     else:
         invalid = numbers[pos+25]
